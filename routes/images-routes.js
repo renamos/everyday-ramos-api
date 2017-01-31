@@ -95,7 +95,7 @@ router.route('/delete/:id')
 
 router.route('/last-image')
     .get(function (req, res) {
-        imageModel.find().sort({"created_at": -1}).limit(7).exec(function (err, image) {
+        imageModel.find().sort({"created_at": -1}).limit(1).exec(function (err, image) {
             if (err) {
                 res.json({
                     message: 'something went wrong'
